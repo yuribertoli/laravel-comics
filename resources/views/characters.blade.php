@@ -3,6 +3,8 @@
 @section('pageTitle', 'Characters')
     
 @section('content')
-    caratteri
+
+    @include('partials.jumbotron')
+
 @endsection
 
