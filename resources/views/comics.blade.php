@@ -3,5 +3,7 @@
 @section('pageTitle', 'comics')
     
 @section('content')
-    fumetti
+
+    @include('partials.jumbotron')
+
 @endsection
