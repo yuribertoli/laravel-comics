@@ -19,8 +19,9 @@ Route::get('/', function () {
     $comics = config('comics');
     $infos = config('infos');
     $colonne = config('colonne_footer');
+    $socials = config('socials');
 
-    return view('Characters', ['data'=>$comics, 'infos'=>$infos, 'colonne'=>$colonne]);
+    return view('Characters', ['data'=>$comics, 'infos'=>$infos, 'colonne'=>$colonne, 'socials'=>$socials]);
 });
 
 Route::get('/comics', function () {

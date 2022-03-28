@@ -12,8 +12,8 @@
                 <li>
                   <h5>{{ $item['titolo'] }}</h5>
 
-                  @foreach ($item['links'] as $item)
-                      <a href="{{ $item['url'] }}">{{ $item['nome'] }}</a>
+                  @foreach ($item['links'] as $under_item)
+                      <a href="{{ $under_item['url'] }}">{{ $under_item['nome'] }}</a>
                   @endforeach
                   
                 </li>
@@ -44,9 +44,13 @@
           <h3>FOLLOW US</h3>
 
           <ul>
-            <li>
-              <img src="" alt="social media">
-            </li>
+
+            @foreach ($socials as $item)
+              <li>
+                <img src="{{ asset($item['sito']) }}" alt="social media">
+              </li>
+            @endforeach
+            
           </ul>
 
         </div>
