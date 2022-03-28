@@ -14,7 +14,7 @@
 
                 <div class="cards">
 
-                    <img src="{{ $item['thumb'] }}" alt="{{ $item['title'] }}">
+                    <img src="{{ asset($item['thumb']) }}" alt="{{ $item['title'] }}">
                 
                     <h4>{{ $item['title'] }}</h4>
                 
@@ -30,7 +30,20 @@
 
     </div>
 
-    @include('partials.blueSection')
+    <div class="info">
+        <div class="container">
+            <ul>
+
+                @foreach ($infos as $item)
+                    <li>
+                        <img src="{{ $item['img'] }}" alt="{{ $item['text'] }}">
+                        <a href="{{ $item['url'] }}">{{ $item['text'] }}</a>
+                    </li>
+                @endforeach
+                
+            </ul>
+        </div>
+    </div>
 
 @endsection
 
