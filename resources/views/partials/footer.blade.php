@@ -6,10 +6,20 @@
         <div class="left-footer">
           <nav>
             <ul>
-              <li>
-                <h5></h5>
-                <a href=""></a>
-              </li>
+
+              @foreach ($colonne as $item)
+                  
+                <li>
+                  <h5>{{ $item['titolo'] }}</h5>
+
+                  @foreach ($item['links'] as $item)
+                      <a href="{{ $item['url'] }}">{{ $item['nome'] }}</a>
+                  @endforeach
+                  
+                </li>
+
+              @endforeach
+
             </ul>
           </nav>
         </div>
