@@ -12,7 +12,7 @@
           {{-- usando gli operatori ternari assegno la classe active se il nome della route corrisponde a quello della pagina selezionata --}}
           {{-- su href imposto la stessa route presente nel nome assegnato --}}
           <li>
-            <a class="{{ Request::route()->getName() == 'home' ? "active" : ""  }}" href="{{route('home')}}">Characters</a>
+            <a class="{{ Request::route()->getName() == 'home' || 'fumetto' ? "active" : ""  }}" href="{{route('home')}}">Characters</a>
           </li>
 
           <li>

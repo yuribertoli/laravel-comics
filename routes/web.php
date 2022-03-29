@@ -22,13 +22,14 @@ Route::get('/', function () {
     $socials = config('socials');
 
     return view('Characters', ['data'=>$comics, 'infos'=>$infos, 'colonne'=>$colonne, 'socials'=>$socials]);
-})->name("home");
+})->name("home"); /* assegno un nome a questa route */
 
 
 
     /* creo una route dinamica per ogni fumetto presente nella route home */
     Route::get('/fumetto/{index_fumetto}', function($index_fumetto){
 
+    /* per far funzionare la pagina devo passare gli stessi data che andranno poi a footer */
     $colonne = config('colonne_footer');
     $socials = config('socials');
 
@@ -48,7 +49,7 @@ Route::get('/', function () {
     }
 
 
-    })->name('fumetto');
+    })->name('fumetto'); 
 
 
 
