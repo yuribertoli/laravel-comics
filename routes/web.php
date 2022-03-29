@@ -24,8 +24,10 @@ Route::get('/', function () {
     return view('Characters', ['data'=>$comics, 'infos'=>$infos, 'colonne'=>$colonne, 'socials'=>$socials]);
 })->name("home");
 
-/* creo una route dinamica per ogni fumetto presente nella route home */
-Route::get('/fumetto/{index_fumetto}', function($index_fumetto){
+
+
+    /* creo una route dinamica per ogni fumetto presente nella route home */
+    Route::get('/fumetto/{index_fumetto}', function($index_fumetto){
 
     $colonne = config('colonne_footer');
     $socials = config('socials');
@@ -36,8 +38,8 @@ Route::get('/fumetto/{index_fumetto}', function($index_fumetto){
     if (is_numeric($index_fumetto) && $index_fumetto >=0 && count($dettaglio) > $index_fumetto) {
 
         $fumetto_scelto = $dettaglio[$index_fumetto];   /* salvo dentro una variabile l'elemento dell'array $dettaglio scelto, grazie all'indice $index_fumetto */
-
-        return view('fumetto', ['numero_indice'=>$fumetto_scelto, 'colonne'=>$colonne, 'socials'=>$socials]); /* stabilisco la rotta verso il file fumetto passando il numero relativo all'indice del fumetto scelto */
+        
+        return view('fumetto', ['array_indice'=>$fumetto_scelto, 'colonne'=>$colonne, 'socials'=>$socials]); /* stabilisco la rotta verso il file fumetto passando il numero relativo all'indice del fumetto scelto */
 
     } else {
 
@@ -46,7 +48,9 @@ Route::get('/fumetto/{index_fumetto}', function($index_fumetto){
     }
 
 
-})->name('fumetto');
+    })->name('fumetto');
+
+
 
 Route::get('/comics', function () {
 
