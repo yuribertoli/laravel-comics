@@ -7,11 +7,13 @@
           <nav>
             <ul>
 
+              {{-- ciclo le colonne per creare le sezioni dinamicamente --}}
               @foreach ($colonne as $item)
                   
-                <li>
+                <li> {{-- il primo ciclo è solo per i titoli delle sezioni --}}
                   <h5>{{ $item['titolo'] }}</h5>
-
+                  
+                  {{-- il secondo ciclo serve a popolare i links delle sezioni --}}
                   @foreach ($item['links'] as $under_item)
                       <a href="{{ $under_item['url'] }}">{{ $under_item['nome'] }}</a>
                   @endforeach
@@ -24,6 +26,7 @@
           </nav>
         </div>
 
+        {{-- inserisco il logo usando la funzione asset() perchè si trova nella cartella public --}}
         <div class="right-footer">
           <img src="{{asset('img/dc-logo-bg.png')}}" alt="logo dc">
         </div>
@@ -45,6 +48,7 @@
 
           <ul>
 
+            {{-- ciclo le immagini da associare ai social media --}}            
             @foreach ($socials as $item)
               <li>
                 <img src="{{ asset($item['sito']) }}" alt="social media">
